@@ -7,44 +7,20 @@
 */
 
 
-
-string s_a = Console.ReadLine()!;
-
-if (s_a == "1")
+Console.Write("Введите день недели: ");
+int Day = int.Parse(Console.ReadLine()!);
+if (Day >= 1 && Day <= 7)
 {
-    Console.WriteLine("<Будний день>");
+    if (Day >= 6)
+    {
+        Console.Write("Это выходной!");
+    }
+    else
+    {
+        Console.Write("Рабочий день");
+    }
 }
-else if (s_a == "2")
-{
-    Console.WriteLine("Будний день");
-}
-
-else if (s_a == "3")
-{
-    Console.WriteLine("Будний день");
-}
-
-else if (s_a == "4")
-{
-    Console.WriteLine("Будний день");
-}
-
-else if (s_a == "5")
-{
-    Console.WriteLine("Будний день");
-}
-
-else if (s_a == "6")
-{
-    Console.WriteLine("Выходной");
-}
-
-else if (s_a == "7")
-{
-    Console.WriteLine("Выходной");
-}
-
 else
 {
-    Console.WriteLine("Не день недели");
+    Console.Write("Это не день недели");
 }
