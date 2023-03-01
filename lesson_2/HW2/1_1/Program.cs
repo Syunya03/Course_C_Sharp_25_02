@@ -6,3 +6,17 @@
 918 -> 1
 */
 
+Console.Write("Введите трёхзначное число:");
+
+int n = int.Parse(Console.ReadLine()!);
+
+if (n > 100 && n <= 1000)
+{
+    int result = (n / 10) % 10;
+     Console.WriteLine($"Второе число {result}");
+}
+else
+{
+    Console.WriteLine("Это не трёхзначное число");
+}
+
