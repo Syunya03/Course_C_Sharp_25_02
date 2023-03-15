@@ -25,11 +25,13 @@ int[] MassNums(int size, int from, int to)
 
 void Sum(int[] arr)
 {
-   int sum = 0;
-for (int i = 0; i < arr.Length; i+=2)
-{ sum= sum +arr[i];}
+    int sum = 0;
+    for (int i = 0; i < arr.Length; i += 2)
+    {
+        sum = sum + arr[i];
+    }
 
-Console.WriteLine($"Сумма элементов,стоящих на нечётных позициях: {sum}");
+    Console.WriteLine($"Сумма элементов,стоящих на нечётных позициях: {sum}");
 }
 
 
