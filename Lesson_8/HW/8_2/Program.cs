@@ -11,56 +11,58 @@
 
 void Print(int[,] arr)
 {
-  int row = arr.GetLength(0);
-  int column = arr.GetLength(1);
+    int row = arr.GetLength(0);
+    int column = arr.GetLength(1);
 
-  for (int i = 0; i < row; i++)
-  {
-    for (int j = 0; j < column; j++)
-      Console.Write($" {arr[i, j]} ");
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+            Console.Write($" {arr[i, j]} ");
+        Console.WriteLine();
+    }
     Console.WriteLine();
-  }
-  Console.WriteLine();
 }
 
 int[,] MassNums(int row, int column, int from, int to)
 {
-  int[,] arr = new int[row, column];
+    int[,] arr = new int[row, column];
 
-  for (int i = 0; i < row; i++)
-    for (int j = 0; j < column; j++)
-      arr[i, j] = new Random().Next(from, to);
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            arr[i, j] = new Random().Next(from, to);
 
-  return arr;
+    return arr;
 }
 
 
 
 int SumLine(int[,] arr, int i)
 {
-int sum = arr[i,0];
+    int sum = arr[i, 0];
 
-for (int j = 1; j < arr.GetLength(1); j++)
+    for (int j = 1; j < arr.GetLength(1); j++)
 
-sum += arr[i,j];
+        sum += arr[i, j];
 
-return sum;
+    return sum;
 }
-void SumLine_2(int [,]arr)
+void SumLine_2(int[,] arr)
 {
-int minSum = 1;
-int sum = SumLine(arr, 0);
-for (int i = 1; i < arr.GetLength(0); i++)
+    int minSum = 1;
+    int sum = SumLine(arr, 0);
+    for (int i = 1; i < arr.GetLength(0); i++)
 
-if (sum > SumLine(arr, i))
-{
-sum = SumLine(arr, i);
-minSum = i+1;
+        if (sum > SumLine(arr, i))
+        {
+            sum = SumLine(arr, i);
+            minSum = i + 1;
+        }
+
+    Console.WriteLine($"\nСтрока c наименьшей суммой элементов: {minSum}");
 }
 
-Console.WriteLine($"\nСтрока c наименьшей суммой элементов: {minSum}");
-}
- Console.WriteLine("Введите количество строк массива");
+
+Console.WriteLine("Введите количество строк массива");
 int num_row = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите количество колонок массива");
 int num_column = int.Parse(Console.ReadLine()!);
